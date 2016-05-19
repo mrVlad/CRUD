@@ -1,15 +1,15 @@
 <?php
 
-function get_available_storages() {
+function get_available_products() {
   global $pdo;
 
-  $sth = $pdo->prepare('SELECT * FROM storages ORDER BY id ASC');
+  $sth = $pdo->prepare("SELECT * FROM storage ORDER BY id_storage ASC");
   $sth->execute();
 
-  $storages = array();
+  $storage = array();
   while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-    $storages[] = $row;
+    $storage[] = $row;
   }
 
-  return $storages;
+  return $storage;
 }

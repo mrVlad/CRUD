@@ -1,13 +1,13 @@
 <?php
 
-$sth = $pdo->prepare('SELECT * FROM repositories WHERE id = :id');
+$sth = $pdo->prepare('SELECT * FROM products WHERE id = :id');
 $sth->execute(array(':id' => $_GET['id']));
 
 if ($repo = $sth->fetch(PDO::FETCH_ASSOC)) {
 
   if (!empty($_POST['delete'])) {
 
-    $sth = $pdo->prepare('DELETE FROM repositories WHERE id = :id');
+    $sth = $pdo->prepare('DELETE FROM products WHERE id = :id');
     $sth->execute(array(':id' => $_GET['id']));
 
     header('Location: index.php');

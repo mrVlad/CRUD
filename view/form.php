@@ -1,24 +1,42 @@
-<form method="post">
-  <div>
-    <label for="name">Name:</label>
-    <input name="name" type="text" value="<?php print htmlspecialchars($repo['name']); ?>" id="name">
-  </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="center">
+    <div class="content">
 
-  <div>
-    <label for="active">Active</label>
-    <input type="checkbox" name="active" id="active"<?php print ($repo['active'] ? ' checked' : ''); ?>>
+      <form method="post">
+        <div class="create">
+          <div>
+            <label for="name">Name:</label>
+            <input name="name" type="text" value="<?php print htmlspecialchars($repo['name']); ?>" id="name">
+          </div>
+  
+          <div>
+            <label for="price">Price</label>
+            <input name="price" type="number" value="<?php print ($repo['price']); ?>" min="0" max="999999" id="price">
+          </div>
+  
+          <div>
+            <label for="storage">Storage</label>
+            <select id="storage" name="storage">
+              <?php foreach ($storage as $value) : ?>
+              <option value="<?php print htmlspecialchars($value['id_storage']); ?>"><?php print htmlspecialchars($value['name']); ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+          
+          <div>
+            <input type="submit" name="save" value="Save">
+          </div>
+        </div>  
+      </form>
+    </div>
   </div>
-
-  <div>
-    <label for="storage">Storage</label>
-    <select id="storage" name="id_storage">
-      <?php foreach ($storages as $storage) : ?>
-      <option value="<?php print htmlspecialchars($storage['id']); ?>"><?php print htmlspecialchars($storage['name']); ?></option>
-      <?php endforeach; ?>
-    </select>
-  </div>
-
-  <div>
-    <input type="submit" name="save" value="Save">
-  </div>
-</form>
+</body>
+</html>

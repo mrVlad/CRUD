@@ -1,0 +1,70 @@
+body {
+    background-size: cover;
+    background-color: white;
+    font-family: "Courier New";
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    background-color: lightgoldenrodyellow;
+    padding-bottom: 10px;
+    border-radius: 25px;
+    margin-top: 20px;
+    width: 640px;
+}
+
+table {
+    border-spacing: 0 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    width: auto;
+}
+
+th {
+    background-color: lightgoldenrodyellow;
+    border: 2px solid black;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: center;
+}
+
+.button_inp{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+td {
+    background-color: lightgoldenrodyellow;
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 5px 5px;
+}
+
+.delete {
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.create {
+    padding-left: 200px;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.create_btn {
+    text-align: center;
+    font-size: 16px;
+    text-decoration: underline;
+}

@@ -2,22 +2,22 @@
 
 $repo = array(
   'name' => '',
-  'active' => 0,
+  'price' => 0,
 );
 
 if (!empty($_POST['save'])) {
-  $sth = $pdo->prepare('INSERT INTO repositories (name, active, id_storage) VALUES (:name, :active, :id_storage)');
+  $sth = $pdo->prepare('INSERT INTO products (name, price, storage) VALUES (:name, :price, :storage)');
   $sth->execute(array(
     ':name' => $_POST['name'],
-    ':active' => (!empty($_POST['active']) ? 1 : 0),
-    ':id_storage' => $_POST['id_storage'],
+    ':price' => $_POST['price'],
+    ':storage' => $_POST['storage'],
   ));
 
   header('Location: index.php');
   exit;
 }
 
-$storages = get_available_storages();
+$storage = get_available_products();
 
 ob_start();
 
